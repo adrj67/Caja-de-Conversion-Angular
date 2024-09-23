@@ -1,0 +1,45 @@
+<hr class="border border-primary border-3 opacity-50">
+<div class="container">
+    <div class="row">
+        <div class="w-25 ms-2 me-5 bg-info bg-opacity-10 text-dark border border-info border-4 rounded mt-3">
+            Beneficio de Fichas: 
+            <strong *ngIf="resultadoBeneficioReal !== null">{{ resultadoBeneficioReal  | currency:'USD':'symbol':'1.2-2' }}</strong>
+        </div>
+
+        <div class="w-25 ms-2 me-5 bg-danger bg-opacity-10 text-danger border border-danger border-4 rounded mt-3" *ngIf="rescateMayorPago">
+            <strong>¡Rescate Mayor al Pago!</strong>
+        </div>
+
+        <div class="w-25 ms-2 me-5 bg-info bg-opacity-10 text-dark border border-info border-4 rounded mt-3">
+            Poder del publico: 
+            <strong *ngIf="resultadoPoderPublico !== null">{{ resultadoPoderPublico  | currency:'USD':'symbol':'1.2-2'  }}</strong>
+        </div>
+    </div>
+</div>
+<hr class="border border-primary border-3 opacity-50">
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div><p class="text-decoration-underline"><strong>INGRESOS</strong></p></div>
+        <div *ngIf="rescateMayorPago; else calculoNormal">
+          <div>7J0000 FICHAS PREMIADAS: {{ iFichasPremiadas  | currency:'USD':'symbol':'1.2-2' }} </div>
+          <div>211100 FICHAS A PAGAR: {{iFichasAPagar  | currency:'USD':'symbol':'1.2-2' }}</div>
+        </div>
+        <ng-template #calculoNormal>
+          <div>7J0000 FICHAS PREMIADAS: {{ iFichasPremiadas  | currency:'USD':'symbol':'1.2-2' }} </div>
+          <div>211100 FICHAS A PAGAR: {{iFichasAPagar  | currency:'USD':'symbol':'1.2-2' }}</div>
+        </ng-template>
+      </div>
+      <div class="col-md-6">
+        <div><p class="text-decoration-underline"><strong>EGRESOS</strong></p></div>
+        <div *ngIf="rescateMayorPago; else calculoNormal">
+          <div>7J0000 FICHAS PREMIADAS: {{ eFichasPremiadas  | currency:'USD':'symbol':'1.2-2' }} </div>
+          <div>211100 FICHAS A PAGAR: {{eFichasAPagar  | currency:'USD':'symbol':'1.2-2' }} </div>
+        </div>
+        <ng-template #calculoNormal>
+          <div>7J0000 FICHAS PREMIADAS: {{ eFichasPremiadas  | currency:'USD':'symbol':'1.2-2' }}</div>
+          <div>211100 FICHAS A PAGAR: {{eFichasAPagar  | currency:'USD':'symbol':'1.2-2' }}</div>
+        </ng-template>
+      </div>
+    </div>
+</div>

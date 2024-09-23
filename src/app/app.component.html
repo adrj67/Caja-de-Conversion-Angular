@@ -1,0 +1,16 @@
+<app-header />
+<app-result-display 
+  *ngIf="resultadosDisponibles"
+  [resultadoBeneficioReal]="resultadoBeneficioReal" 
+  [rescateMayorPago]="rescateMayorPago"
+  [resultadoPoderPublico]="resultadoPoderPublico"
+  [iFichasPremiadas]="resultados.iFichasPremiadas"
+  [iFichasAPagar]="resultados.iFichasAPagar"
+  [eFichasPremiadas]="resultados.eFichasPremiadas"
+  [eFichasAPagar]="resultados.eFichasAPagar">
+</app-result-display>
+<app-input-form *ngIf="!resultadosDisponibles"
+(resultadoCalculado)="onResultadoCalculado($event)">
+</app-input-form>
+<app-foot />
+<router-outlet />

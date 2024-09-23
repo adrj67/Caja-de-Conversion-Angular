@@ -1,0 +1,137 @@
+<form [formGroup]="formulario" (ngSubmit)="calcularResultados()">
+    <br>
+    <div class="ms-2 me-5 bg-success bg-opacity-10 text-success border border-success rounded">
+        Movimiento de fichas
+    </div>
+    <!-- Fichas Del cargo Canje O/Casinos -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="fichasDelCargo" class="col-form-label">Fichas Del cargo Canje O/Casinos</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="fichasDelCargo" formControlName="fichasDelCargo" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="fichasDelCargo" class="form-text">
+                Verifique el movimiento de fichas.
+            </span>
+        </div>
+    </div>
+    <!-- Devolucion Fuera del Cargo (P.Tesor.) -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="devolucionFueraDelCargo" class="col-form-label">Devolucion Fuera del Cargo</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="devolucionFueraDelCargo" formControlName="devolucionFueraDelCargo" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="devolucionFueraDelCargo" class="form-text">
+                Verifique el movimiento de fichas. Solo Importes Positivos.
+            </span>
+        </div>
+    </div>
+    <div class="ms-2 me-5 bg-success bg-opacity-10 text-success border border-success rounded">
+        Pago de fichas
+    </div>
+    <!-- Pagadas por Caja de Publico -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="pagadasPorCajaPublico" class="col-form-label">Pagadas por Caja de Publico</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="pagadasPorCajaPublico" formControlName="pagadasPorCajaPublico" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="pagadasPorCajaPublico" class="form-text">
+                Fichas pagadas por caja publico.
+            </span>
+        </div>
+    </div>
+    <!-- Provenientes de Caja de Empleados -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="provenientesCajaEmpleados" class="col-form-label">Provenientes de Caja de Empleados</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="provenientesCajaEmpleados" formControlName="provenientesCajaEmpleados" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="provenientesCajaEmpleados" class="form-text">
+                Fichas provenientes de la Caja Empleados.
+            </span>
+        </div>
+    </div> 
+    <div class="ms-2 me-5 bg-success bg-opacity-10 text-success border border-success rounded">
+        Beneficio de Fichas:
+    </div>
+    <!-- Beneficio -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="beneficio" class="col-form-label">Total Beneficio</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="beneficio" formControlName="beneficio" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="beneficio" class="form-text">
+                Beneficio total de juegos.
+            </span>
+        </div>
+    </div>
+    <!-- Quebranto -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="quebranto" class="col-form-label">Total Quebranto</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="quebranto" formControlName="quebranto" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="quebranto" class="form-text">
+                Quebranto total de juegos.
+            </span>
+        </div>
+    </div> 
+    <div class="ms-2 me-5 bg-success bg-opacity-10 text-success border border-success rounded">
+        Venta Total de Fichas
+    </div>
+    <!-- Venta de Fichas -->
+    <div class="row g-3 align-items-center" style="margin: 1px">
+        <div class="col-3">
+            <label for="ventaDeFichas" class="col-form-label">Total Venta de Fichas</label>
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">$</span>
+        </div>
+        <div class="col-2">
+            <input type="text" id="ventaDeFichas" formControlName="ventaDeFichas" class="form-control text-end border-dark" aria-label="Amount (to the nearest dollar)">
+        </div>
+        <div class="col-2">
+            <span id="ventaDeFichas" class="form-text">
+                Venta total de fichas en Pesos y Dolares.
+            </span>
+        </div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Calcular</button>
+      </div>
+</form>
